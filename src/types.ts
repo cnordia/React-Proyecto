@@ -3,9 +3,10 @@
 export type CategoriaElectronica = "Portátiles" | "Móviles" | "Televisores" | "Gaming" | "Tablets" | "Periféricos";
 
 export interface Producto{
+    id: string
     nombre: string;
     precio: number;
     categoria: CategoriaElectronica;
-    estado: "pendiente" | "enviado" | "entregado";
+    estado: "nuevo" | "segundaMano";
 }
 
