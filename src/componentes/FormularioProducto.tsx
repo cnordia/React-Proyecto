@@ -1,6 +1,6 @@
 import {useState} from 'react'
 import { anadirProducto } from '../firebase/services';
-import { type Producto, type CategoriaElectronica } from '../types';
+import { type CategoriaElectronica } from '../types';
 
 
 type FormularioProductoProps = {
@@ -19,7 +19,7 @@ function FormularioProducto({ onClose }: FormularioProductoProps) {
     e.preventDefault();
 
     try {
-      const productoGuardado = await anadirProducto(nuevoProducto);
+      await anadirProducto(nuevoProducto);
 
       // Limpiamos el formulario para poder añadir otro
       setNuevoProducto({ nombre: '', precio: 0, categoria: 'Portátiles' as CategoriaElectronica, estado: 'nuevo' });
